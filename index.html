@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skanda S M | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Skanda S M - Java Full Stack Intern & IT Graduate" />
+  <style>
+    :root {
+      --bg-dark: #050816;
+      --bg-card: #0f172a;
+      --bg-soft: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --radius-xl: 18px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+      --shadow-chip: 0 8px 20px rgba(15, 23, 42, 0.7);
+      --transition: 200ms ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 40%, #020617 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.6), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-pill {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #38bdf8, #0ea5e9, #1e293b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      box-shadow: var(--shadow-chip);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      color: #e0f2fe;
+      font-size: 0.9rem;
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nav-title-main {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+    }
+
+    .nav-title-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.5rem;
+      border-radius: 999px;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform 160ms ease-out;
+    }
+
+    .nav-links a:hover {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.4);
+      color: #f9fafb;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      background: linear-gradient(to right, #38bdf8, #0ea5e9);
+      border: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0b1120;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 14px 30px rgba(56, 189, 248, 0.4);
+      transition: transform 140ms ease-out, box-shadow 140ms ease-out, filter 140ms ease-out;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) translateX(0.5px);
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.55);
+      filter: brightness(1.05);
+    }
+
+    .btn-primary span.icon {
+      font-size: 1rem;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3.5rem;
+    }
+
+    /* Hero section */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-top: 1.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      width: fit-content;
+    }
+
+    .hero-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #38bdf8, #22d3ee, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-ghost {
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-main);
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background var(--transition), border-color var(--transition), transform 160ms ease-out;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.92);
+      border-color: rgba(148, 163, 184, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #38bdf8;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .hero-meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-value {
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .profile-card {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      border-radius: 22px;
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2), transparent 50%),
+        radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.16), transparent 55%),
+        #020617;
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      overflow: hidden;
+    }
+
+    .profile-glow {
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(circle at 20% 0, rgba(56, 189, 248, 0.35), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(244, 114, 182, 0.3), transparent 55%);
+      opacity: 0.5;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .profile-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .profile-avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 22px;
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      background: linear-gradient(135deg, #0f172a, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #e5e7eb;
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.95);
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .profile-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .profile-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .profile-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+    }
+
+    .badge-accent {
+      border-color: rgba(56, 189, 248, 0.7);
+      background: rgba(8, 47, 73, 0.9);
+      color: #e0f2fe;
+    }
+
+    .profile-section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    .profile-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .chip-pill {
+      background: var(--accent-soft);
+      border-color: rgba(56, 189, 248, 0.8);
+      color: #e0f2fe;
+    }
+
+    .profile-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: 0.4rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .social-pill {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition), transform 140ms ease-out;
+    }
+
+    .social-pill:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(148, 163, 184, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .profile-availability {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .profile-availability span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.16);
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      color: #bbf7d0;
+      font-size: 0.7rem;
+      margin-top: 0.2rem;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 1.8rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .section-accent {
+      font-size: 0.76rem;
+      color: var(--accent);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9));
+      border: 1px solid var(--border-subtle);
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .card-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .card-tagline {
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .card-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.15rem;
+      min-width: 120px;
+      text-align: right;
+    }
+
+    .card-body {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    .card-body ul {
+      margin-top: 0.4rem;
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .card-body li {
+      font-size: 0.8rem;
+    }
+
+    .pill-row {
+      margin-top: 0.45rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      border-radius: 999px;
+      padding: 0.18rem 0.55rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* Skills section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .skills-group-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    /* Contact section */
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 2.5fr) minmax(0, 2fr);
+      gap: 1.1rem;
+      align-items: center;
+    }
+
+    .contact-info {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .contact-rows {
+      margin-top: 0.75rem;
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .contact-label {
+      min-width: 60px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .contact-value a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    .contact-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    .contact-cta {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), rgba(15, 23, 42, 0.96));
+      border: 1px solid var(--border-subtle);
+      padding: 0.9rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-cta-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-cta-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .footer {
+      padding: 1rem 1.25rem 1.5rem;
+      border-top: 1px solid rgba(15, 23, 42, 0.95);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), #020617);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        justify-content: flex-start;
+      }
+
+      .profile-card {
+        max-width: none;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding-inline: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .container {
+        padding-inline: 1rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- NAVBAR -->
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="logo-pill">S</div>
+        <div class="nav-title">
+          <div class="nav-title-main">Skanda S M</div>
+          <div class="nav-title-sub">Java Full Stack Intern • IT Graduate</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn-primary">
+          <span>Let’s Connect</span>
+          <span class="icon">↗</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- HERO -->
+      <section class="hero" id="about">
+        <div class="hero-left">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Open to roles in Development & Data
+          </div>
+          <h1 class="hero-title">
+            Hi, I’m <span>Skanda</span><br />
+            IT Graduate & Java Full Stack Intern
+          </h1>
+          <p class="hero-subtitle">
+            Motivated and detail-oriented IT graduate with hands-on experience in full-stack development,
+            RESTful APIs, and database design. Passionate about solving real-world problems through technology,
+            with growing interest in data and analytics.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="#projects">
+              <span>View Projects</span>
+              <span class="icon">💻</span>
+            </a>
+            <a class="btn-ghost" href="#experience">
+              <span class="dot"></span>
+              <span>Experience & Internship</span>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">Location</div>
+              <div class="hero-meta-value">Bengaluru, Karnataka</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">Email</div>
+              <div class="hero-meta-value">skandaavathade94@gmail.com</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">Looking for</div>
+              <div class="hero-meta-value">Entry-level Developer / Data roles</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="profile-card">
+            <div class="profile-glow"></div>
+            <div class="profile-inner">
+              <div class="profile-header">
+                <div class="profile-avatar">S</div>
+                <div class="profile-info">
+                  <div class="profile-name">Skanda S M</div>
+                  <div class="profile-role">MCA Student • Java Full Stack Intern</div>
+                  <div class="profile-location">📍 Bengaluru, Karnataka</div>
+                  <div class="badge-row">
+                    <span class="badge badge-accent">MCA (Wainting For Result)</span>
+                    <span class="badge">BCA Graduate</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="profile-section-title">Core skills</div>
+                <div class="profile-skills">
+                  <span class="chip chip-pill">Java</span>
+                  <span class="chip">C</span>
+                  <span class="chip">C++</span>
+                  <span class="chip">REST APIs</span>
+                  <span class="chip">MySQL</span>
+                  <span class="chip">Project Management</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="profile-section-title">Soft skills</div>
+                <div class="profile-skills">
+                  <span class="chip">Problem Solving</span>
+                  <span class="chip">Time Management</span>
+                  <span class="chip">Team Collaboration</span>
+                  <span class="chip">Leadership</span>
+                </div>
+              </div>
+
+              <div class="profile-footer">
+                <div class="social-links">
+                  <a class="social-pill" href="https://www.linkedin.com/in/skanda-s-m-8b0715350" target="_blank">
+                    <span>in</span> <span>LinkedIn</span>
+                  </a>
+                  <a class="social-pill" href="https://github.com/Skanda-sm" target="_blank">
+                    <span>★</span> <span>GitHub</span>
+                  </a>
+                  <!-- Update this href with your resume file path -->
+                  <a class="social-pill" href="assets/Skanda_S_M_Resume.pdf" target="_blank">
+                    <span>⬇</span> <span>Resume</span>
+                  </a>
+                </div>
+                <div class="profile-availability">
+                  Available for
+                  <span>Full-time & Internship</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <div class="section-header">
+          <div class="section-title">Experience</div>
+          <div class="section-accent">Industry exposure & internship</div>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Java Full Stack Intern</div>
+                <div class="card-subtitle">ParvaM</div>
+                <div class="card-tagline">Building and optimizing full-stack applications</div>
+              </div>
+              <div class="card-meta">
+                <span>Aug 2025 – Nov 2025</span>
+                <span>Remote / Bengaluru</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Built and optimized RESTful APIs using industry-standard frameworks and MySQL databases.</li>
+                <li>Implemented JWT-based authentication and role-based access control for secure systems.</li>
+                <li>Designed and tuned database schemas to improve query efficiency and scalability.</li>
+                <li>Worked with deployment processes, debugging, and application security practices.</li>
+              </ul>
+              <div class="pill-row">
+                <span class="pill">Java</span>
+                <span class="pill">REST APIs</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">Authentication</span>
+                <span class="pill">Debugging</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Leadership & Collaboration</div>
+                <div class="card-subtitle">Academic & team projects</div>
+                <div class="card-tagline">Coordinating tasks and delivering outcomes</div>
+              </div>
+              <div class="card-meta">
+                <span>Ongoing</span>
+                <span>MCA & BCA coursework</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Worked in teams to plan, develop, and present academic projects to faculty and peers.</li>
+                <li>Practiced time management to deliver assignments and projects within deadlines.</li>
+                <li>Improved communication skills by explaining technical concepts to non-technical audiences.</li>
+              </ul>
+              <div class="pill-row">
+                <span class="pill">Teamwork</span>
+                <span class="pill">Presentation</span>
+                <span class="pill">Project Management</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="section-header">
+          <div class="section-title">Projects</div>
+          <div class="section-accent">Academic & technical work</div>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">AI Powered Resume Analyzer</div>
+                <div class="card-subtitle">Academic Project</div>
+              </div>
+              <div class="card-meta">
+                <span>Machine Learning (Beginner level)</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>
+                A project focused on analyzing resumes and extracting key information using basic AI/ML concepts,
+                helping to evaluate candidate skills and structure.
+              </p>
+              <div class="pill-row">
+                <span class="pill">AI Concepts</span>
+                <span class="pill">Beginner ML</span>
+                <span class="pill">Problem Solving</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Learning Management System (LMS)</div>
+                <div class="card-subtitle">Academic Project</div>
+              </div>
+              <div class="card-meta">
+                <span>Full Stack</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>
+                An LMS platform designed to manage students, courses, and study materials, emphasizing structured
+                data handling and user-friendly navigation.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Web Development</span>
+                <span class="pill">Databases</span>
+                <span class="pill">User Experience</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="section-header">
+          <div class="section-title">Skills</div>
+          <div class="section-accent">Technical & professional strengths</div>
+        </div>
+        <div class="card">
+          <div class="skills-grid">
+            <div>
+              <div class="skills-group-title">Programming</div>
+              <div class="skills-list">
+                <span class="pill">C</span>
+                <span class="pill">C++</span>
+                <span class="pill">Java</span>
+              </div>
+            </div>
+            <div>
+              <div class="skills-group-title">Development</div>
+              <div class="skills-list">
+                <span class="pill">Full Stack Fundamentals</span>
+                <span class="pill">Web Development</span>
+                <span class="pill">RESTful APIs</span>
+                <span class="pill">IoT (Basics)</span>
+              </div>
+            </div>
+            <div>
+              <div class="skills-group-title">Data & Tools</div>
+              <div class="skills-list">
+                <span class="pill">MySQL</span>
+                <span class="pill">Oracle AI Cloud DB (Certified)</span>
+                <span class="pill">Machine Learning (Beginner)</span>
+              </div>
+            </div>
+            <div>
+              <div class="skills-group-title">Professional</div>
+              <div class="skills-list">
+                <span class="pill">Project Management</span>
+                <span class="pill">Leadership</span>
+                <span class="pill">Problem Solving</span>
+                <span class="pill">Decision Making</span>
+              </div>
+            </div>
+            <div>
+              <div class="skills-group-title">Certificates</div>
+              <div class="skills-list">
+                <span class="pill">Full Stack Development – Unnatii</span>
+                <span class="pill">Oracle AI Cloud Database</span>
+                <span class="pill">Generative AI</span>
+                <span class="pill">DevOps Professional</span>
+              </div>
+            </div>
+            <div>
+              <div class="skills-group-title">Languages</div>
+              <div class="skills-list">
+                <span class="pill">Kannada (Superior)</span>
+                <span class="pill">English (Advanced)</span>
+                <span class="pill">Hindi (Advanced)</span>
+                <span class="pill">Marathi (Advanced)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <div class="section-header">
+          <div class="section-title">Education</div>
+          <div class="section-accent">Academic background</div>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">MCA – Master of Computer Applications</div>
+                <div class="card-subtitle">Dhanwanthri Academy for Management Studies</div>
+              </div>
+              <div class="card-meta">
+                <span>2024 – 2026</span>
+                <span>Pursuing</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>Focused on advanced computer science concepts, software development, and professional skills.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">BCA – Bachelor of Computer Applications</div>
+                <div class="card-subtitle">GFGC Shikaripura</div>
+              </div>
+              <div class="card-meta">
+                <span>2021 – 2023</span>
+                <span>CGPA: 7.3</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>Developed a strong foundation in programming, databases, and computer applications.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">PUC – Commerce</div>
+                <div class="card-subtitle">SCMPUC</div>
+              </div>
+              <div class="card-meta">
+                <span>2018 – 2020</span>
+                <span>Percentage: 6.6</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>Gained basic understanding of business, accounting, and commerce-related subjects.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">SSLC</div>
+                <div class="card-subtitle">SCMVS</div>
+              </div>
+              <div class="card-meta">
+                <span>2016 – 2017</span>
+                <span>CGPA: 7.5</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>Completed school education with a focus on fundamentals across core subjects.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-header">
+          <div class="section-title">Contact</div>
+          <div class="section-accent">Let’s work together</div>
+        </div>
+        <div class="contact-card card">
+          <div class="contact-info">
+            <p>
+              Whether it’s an entry-level developer role, a data-focused position, or an internship opportunity,
+              I’m excited to contribute, learn, and grow with your team.
+            </p>
+            <div class="contact-rows">
+              <div class="contact-row">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                  <a href="mailto:skandaavathade94@gmail.com">skandaavathade94@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">
+                  <a href="tel:+919481941403">+91 94819 41403</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">
+                  <a href="https://www.linkedin.com/in/skanda-s-m-8b0715350" target="_blank">
+                    linkedin.com/in/skanda-s-m-8b0715350
+                  </a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-label">GitHub</div>
+                <div class="contact-value">
+                  <a href="https://github.com/Skanda-sm" target="_blank">github.com/Skanda-sm</a>
+                </div>
+              </div>
+            </div>
+            <p class="contact-note">
+              Tip: You can host this portfolio for free using GitHub Pages or Netlify.
+            </p>
+          </div>
+
+          <div class="contact-cta">
+            <div class="contact-cta-title">Ready to collaborate</div>
+            <div class="contact-cta-text">
+              I enjoy working on clean, reliable software and exploring AI & data technologies.  
+              If my profile matches your requirement, feel free to reach out.
+            </div>
+            <div class="contact-cta-row">
+              <a class="btn-primary" href="mailto:skandaavathade94@gmail.com?subject=Opportunity%20for%20Skanda">
+                <span>Send me an email</span>
+                <span class="icon">✉</span>
+              </a>
+              <!-- Update this href with your resume file path -->
+              <a class="btn-ghost" href="assets/Skanda_S_M_Resume.pdf" target="_blank">
+                View Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Skanda S M. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#about">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Set current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
